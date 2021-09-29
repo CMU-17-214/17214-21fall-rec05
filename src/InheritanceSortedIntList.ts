@@ -13,7 +13,13 @@ import { SortedIntList } from "./hidden/SortedIntListLibrary";
 class InheritanceSortedIntList extends SortedIntList {
     // the number of attempted element insertions
     private totalAdded:number = 0
-
+    
+    add(num: number): boolean {
+        let result: boolean = super.add(num)
+        if (result) this.totalAdded++
+        return result
+    }
+    
     /**
      * Gets the total number of attempted int insertions to the list since it
      * was created.
