@@ -24,10 +24,12 @@ class DelegationSortedIntList implements IntegerList {
         return result
     }
     addAll(list: IntegerList): boolean {
-        throw new Error("Method not implemented.");
+        let result: boolean = this.#delegate.addAll(list)
+        if (result) this.#totalAdded = list.size()
+        return result
     }
     get(index: number): number {
-        throw new Error("Method not implemented.");
+        return this.#delegate.get(index)
     }
     remove(num: number): boolean {
         throw new Error("Method not implemented.");
@@ -36,7 +38,7 @@ class DelegationSortedIntList implements IntegerList {
         throw new Error("Method not implemented.");
     }
     size(): number {
-        throw new Error("Method not implemented.");
+        return this.#delegate.size()
     }
 
     /**

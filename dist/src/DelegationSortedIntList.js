@@ -39,10 +39,13 @@ class DelegationSortedIntList {
         return result;
     }
     addAll(list) {
-        throw new Error("Method not implemented.");
+        let result = __classPrivateFieldGet(this, _DelegationSortedIntList_delegate, "f").addAll(list);
+        if (result)
+            __classPrivateFieldSet(this, _DelegationSortedIntList_totalAdded, list.size(), "f");
+        return result;
     }
     get(index) {
-        throw new Error("Method not implemented.");
+        return __classPrivateFieldGet(this, _DelegationSortedIntList_delegate, "f").get(index);
     }
     remove(num) {
         throw new Error("Method not implemented.");
@@ -51,7 +54,7 @@ class DelegationSortedIntList {
         throw new Error("Method not implemented.");
     }
     size() {
-        throw new Error("Method not implemented.");
+        return __classPrivateFieldGet(this, _DelegationSortedIntList_delegate, "f").size();
     }
     /**
      * Gets the total number of attempted int insertions to the list since it.
